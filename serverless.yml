@@ -1,0 +1,18 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: adityasinghcodes
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: sls-tutorial-youtube
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  deploymentBucket:
+    name: bucket-name
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get

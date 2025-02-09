@@ -1,0 +1,46 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"cloudformation:*",
+				"cloudformation:TagResource",
+
+				"lambda:*",
+
+				"apigateway:*",
+
+				"iam:CreateRole",
+				"iam:GetRole",
+				"iam:DeleteRole",
+				"iam:PutRolePolicy",
+				"iam:DeleteRolePolicy",
+				"iam:PassRole",
+				"iam:TagRole",
+				"iam:UntagRole",
+
+				"logs:CreateLogGroup",
+				"logs:DeleteLogGroup",
+				"logs:DescribeLogGroups",
+				"logs:PutRetentionPolicy",
+				"logs:TagResource"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:CreateBucket",
+				"s3:ListBucket",
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:DeleteObject",
+				"s3:GetBucketLocation",
+				"s3:PutBucketPolicy",
+				"s3:GetBucketPolicy"
+			],
+			"Resource": ["arn:aws:s3:::bucket-name", "arn:aws:s3:::bucket-name/*"]
+		}
+	]
+}
